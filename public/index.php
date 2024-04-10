@@ -49,8 +49,11 @@ if ($_SESSION['user_login']) {
   // Productos
   $router->get('/productos', [ProductoController::class, 'index']);
 
-  // API
-  $router->get('/api/productos', [APIController::class, 'index']);
+  // API Productos
+  $router->get('/api/usuarios', [APIController::class, 'index']);
+  $router->get('/api/roles', [APIController::class, 'roles']);
+  $router->get('/api/productos', [APIController::class, 'productos']);
+  $router->get('/api/categorias', [APIController::class, 'categorias']);
 
   // Comprobar y validar las rutas, que existan y les asigna las funciones del Controlador
 }

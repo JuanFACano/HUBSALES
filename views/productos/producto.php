@@ -21,7 +21,7 @@
         <th class="table_head_item">Descripción</th>
         <th class="table_head_item">Action</th>
       </thead>
-      <tbody class="table_body" id="table_body">
+      <tbody class="table_body" id="productos">
         <?php foreach ($datos_base as $dato) : ?>
           <tr class="table_row">
             <td><?php echo $dato->prod_nombre ?></td>

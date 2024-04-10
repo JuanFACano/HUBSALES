@@ -6,8 +6,6 @@ use Classes\Email;
 use Model\Usuario;
 use MVC\Router;
 
-use function PHPSTORM_META\type;
-
 class UsuarioController
 {
     protected static $campos = ['user_nombre', 'rol_nombre', 'user_correo'];
