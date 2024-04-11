@@ -44,10 +44,10 @@ if ($_SESSION['user_login']) {
 
   // ? Vistas para usuario Base
   // ---------------------------------------------------------
-
-
   // Productos
   $router->get('/productos', [ProductoController::class, 'index']);
+  $router->get('/productos/crear', [ProductoController::class, 'crear']);
+
 
   // API Productos
   $router->get('/api/usuarios', [APIController::class, 'index']);

@@ -15,7 +15,7 @@
       </button>
     </div>
   </header>
-  <main class="contenedor_main">
+  <div class="contenedor_main">
     <table class="table">
       <thead class="table_head">
         <th class="table_head_item">Nombre</th>
@@ -26,5 +26,7 @@
       <tbody class="table_body" id="usuarios">
       </tbody>
     </table>
-  </main>
+  </div>
+  <div class="contenedor_main"></div>
+
 </div>

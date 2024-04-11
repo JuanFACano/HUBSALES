@@ -20,4 +20,9 @@ class ProductoController
 
     $router->render('productos/producto', $productosJoin);
   }
+
+  public static function crear(Router $router)
+  {
+    $router->render('productos/crear_producto');
+  }
 }

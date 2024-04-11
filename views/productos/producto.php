@@ -3,7 +3,7 @@
     <div class="contenedor_header_head">
       <h1 class="app_title">Productos</h1>
       <div class="button_active_form app_boton boton">
-        <a href="/producto/crear">Agregar Producto</a>
+        <a href="/productos/crear">Agregar Producto</a>
       </div>
     </div>
     <div class="contenedor_header_search campo campo_search">
@@ -11,7 +11,7 @@
       <i class="fa-solid fa-magnifying-glass"></i>
     </div>
   </header>
-  <main class="contenedor_main">
+  <div class="contenedor_main">
     <table class="table">
       <thead class="table_head">
         <th class="table_head_item">Nombre</th>
@@ -42,5 +42,5 @@
         <?php endforeach ?>
       </tbody>
     </table>
-  </main>
+  </div>
 </div>

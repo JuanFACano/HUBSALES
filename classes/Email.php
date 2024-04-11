@@ -1,20 +1,24 @@
 <?php
+
 namespace Classes;
 
 use PHPMailer\PHPMailer\PHPMailer;
 
-class Email {
+class Email
+{
     public $correo;
     public $nombre;
     public $token;
 
-    public function __construct( $correo, $nombre, $token ) {
+    public function __construct($correo, $nombre, $token)
+    {
         $this->correo = $correo;
         $this->nombre = $nombre;
         $this->token = $token;
     }
 
-    public function enviarConfirmacion() {
+    public function enviarConfirmacion()
+    {
         // ? Crear el objeto email
         $phpmailer = new PHPMailer();
         $phpmailer->isSMTP();
@@ -24,12 +28,12 @@ class Email {
         $phpmailer->Username = 'bfc066777ac812';
         $phpmailer->Password = '469617894db80f';
 
-        $phpmailer->setFrom( 'cuentas@husales.com' );
-        $phpmailer->addAddress( 'cuentas@husales.com', 'hubsales.com' );
+        $phpmailer->setFrom('cuentas@husales.com');
+        $phpmailer->addAddress('cuentas@husales.com', 'hubsales.com');
         $phpmailer->Subject = "Confirma tu cuenta";
 
         // set HTML
-        $phpmailer->isHTML( TRUE );
+        $phpmailer->isHTML(TRUE);
         $phpmailer->CharSet = 'UTF-8';
         $contenido = "<html>";
         $contenido .= "<p><strong>Hola  " . $this->nombre . "</strong> Has creao tu cuenta en hubsales, solo debes confirmarla presionando el siguiente enlace</p>";
@@ -44,4 +48,3 @@ class Email {
         $phpmailer->send();
     }
 }
-?>
