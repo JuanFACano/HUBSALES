@@ -1,11 +1,6 @@
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
 
-.dark-mode {
-  .form {
-    background-color: v.$azul-100;
-  }
-}
 
 .form {
   display: flex;

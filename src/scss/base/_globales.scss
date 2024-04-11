@@ -23,44 +23,6 @@ body {
     font-size: 1.6rem;
     overflow-x: hidden;
 
-    &.dark-mode {
-
-        .contenedor_main::-webkit-scrollbar-track {
-            background-color: v.$azul-300;
-        }
-
-        .contenedor_main::-webkit-scrollbar-thumb {
-            background-color: v.$azul-600;
-        }
-
-        .sidebar {
-            background-color: v.$azul_800;
-        }
-
-        .sidebar {
-            .menu_item {
-                background-color: v.$azul_800;
-                border: .25rem solid v.$azul_700;
-            }
-        }
-
-        .app {
-
-            .gen_card_item,
-            .gen_stat_item {
-                box-shadow: none;
-                background-color: v.$azul_800;
-            }
-
-            .gen_card_item {
-
-                .gen_card_item_desc,
-                .gen_card_item_amount {
-                    color: v.$azul-100;
-                }
-            }
-        }
-    }
 }
 
 a {

@@ -1,37 +1,15 @@
-
 const body = document.querySelector("body");
 
 document.addEventListener('DOMContentLoaded', function () {
   iniciarApp();
 });
 
-
 function iniciarApp() {
-  darkMode();
+
   tabs();
   goBack();
-  consultarAPI(); // consulta la API del backend en PHP
 }
 
-function darkMode() {
-  const preferDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
-  const app = document.querySelector('.app')
-  const buttons = document.querySelectorAll(".boton")
-
-  if (preferDarkMode.matches) {
-    body.classList.add("dark-mode")
-    app.classList.add("dark-mode")
-    buttons.forEach((button) => {
-      button.classList.add("dark-mode")
-    })
-  } else {
-    body.classList.remove("dark-mode")
-    app.classList.remove("dark-mode")
-    butons.forEach((button) => {
-      button.classList.remove("dark-mode")
-    })
-  }
-}
 
 function tabs() {
   const menuItems = body.querySelectorAll(".menu_item");
@@ -43,6 +21,16 @@ function tabs() {
 
     if (windowsPathname === menuItemPathname || (windowsPathname === '/index.php' && menuItemPathname === '/')) {
       menuItem.classList.add("active")
+      if (menuItemPathname.includes('usuarios')) {
+        consultarUsuarios()
+      } else if (menuItemPathname.includes('productos')) {
+        consultarProductos()
+      }
+      else if (menuItemPathname.includes('clientes')) {
+        consultarClientes()
+      } else if (menuItemPathname.includes('facturas')) {
+        consultarFacturas()
+      }
     }
   });
 }
@@ -65,11 +53,8 @@ function eliminarProducto(producto) {
   console.log(producto);
 }
 
-function consultarAPI() {
-  consultarUsuarios()
-}
-
 async function consultarUsuarios() {
+  console.log("Consultando Usuarios");
   try {
     let url = 'http://localhost:3000/api/usuarios';
     let resultado = await fetch(url)
@@ -77,7 +62,6 @@ async function consultarUsuarios() {
 
     usuarios.forEach(usuario => {
       const { user_id, user_nombre, user_correo, rol_nombre } = usuario
-
 
       const userName = document.createElement('TD');
       userName.textContent = user_nombre
@@ -99,21 +83,23 @@ async function consultarUsuarios() {
 
       const iconDelete = document.createElement('I');
       iconDelete.classList.add('fa-solid')
-      iconDelete.classList.add('fa-trash')
+      iconDelete.classList.add('fa-trash');
+
 
       const buttonDelete = document.createElement('BUTTON');
       buttonDelete.classList.add('table_actions')
       buttonDelete.classList.add('delete')
-      buttonDelete.appendChild(iconDelete)
+      buttonDelete.appendChild(iconDelete);
 
       const actionButtons = document.createElement('TD');
-      actionButtons.appendChild(buttonEdit)
-      actionButtons.appendChild(buttonDelete)
+      actionButtons.appendChild(buttonEdit);
+      actionButtons.appendChild(buttonDelete);
 
       const columns = [userName, userRol, userEmail, actionButtons];
 
       const tableRow = document.createElement('TR');
-      tableRow.classList.add('table_row')
+      tableRow.classList.add('table_row');
+      tableRow.dataset.idUsuario = user_id;
 
       columns.forEach(column => {
         tableRow.appendChild(column)
@@ -127,3 +113,15 @@ async function consultarUsuarios() {
     console.log("Error" + error);
   }
 }
+
+async function consultarProductos() {
+  console.log("Consultando Productos");
+}
+
+async function consultarClientes() {
+  console.log("Consultando Clientes");
+}
+
+async function consultarFacturas() {
+  console.log("Consultando Facturas");
+};

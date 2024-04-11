@@ -8,12 +8,16 @@
     @include m.boton(v.$azul-700, v.$azul-100, 1rem, 2rem);
   }
 
+  &.pad1-4 {
+    @include m.boton(v.$azul-700, v.$azul-100, 1rem, 4rem);
+  }
+
   &.pad2-2 {
     @include m.boton(v.$azul-700, v.$azul-100, 2rem, 2rem);
   }
 
-  &.width-70 {
-    @include m.boton(v.$azul-700, v.$azul-100, 1rem, 1rem, 10%);
+  &.boton-bg {
+    @include m.boton(v.$azul-700, v.$azul-100, 2rem, 2rem);
   }
 }
 

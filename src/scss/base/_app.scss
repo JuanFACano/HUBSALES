@@ -1,21 +1,6 @@
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
 
-.app {
-  &.dark-mode {
-    .contenedor_app {
-      background-color: v.$azul_800;
-
-      .contenedor_header {
-        .app_title {
-          color: v.$azul-100;
-        }
-      }
-    }
-  }
-}
-
-
 // App
 .contenedor_app {
   min-height: 100%;
@@ -32,7 +17,6 @@
     justify-content: space-around;
     width: 100%;
     gap: 2rem;
-    padding: 2rem;
 
 
     .contenedor_header_head {
@@ -81,8 +65,15 @@
     }
 
     .contenedor_main {
-      max-height: 40rem;
-      overflow: auto;
+      width: 100%;
+      padding: 0 2rem;
+
+
+      .tabla_contenedor {
+        overflow: auto;
+        max-height: 42rem;
+        margin-top: 2rem;
+      }
     }
   }
 }

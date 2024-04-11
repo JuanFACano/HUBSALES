@@ -1,16 +1,7 @@
 @use 'variables' as v;
 @use 'mixins' as m;
 
-.dark-mode {
-    .title_page {
-        color: v.$azul_100;
-    }
 
-    .description_page {
-        color: v.$azul_100;
-        font-weight: v.$bold;
-    }
-}
 
 h1,
 h2,
