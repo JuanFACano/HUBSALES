@@ -5,6 +5,8 @@ namespace Model;
 use Classes\QueryBuilder;
 use PDO;
 
+use function PHPSTORM_META\type;
+
 class ActiveRecord
 {
 
@@ -246,12 +248,20 @@ class ActiveRecord
     public static function crearobjetoJoin($registro, $campo_add = [])
     {
         $objeto = new static;
-        foreach ($registro as $key => $value) {
-        }
 
-        if (!empty($campo_add)) {
-            foreach ($campo_add as $key => $value) {
-                $objeto->$key = $value;
+        foreach ($registro as $key => $value) {
+
+            $objeto->$key = $value;
+        }
+        $objeto = self::limpiarObjeto($objeto);
+        return $objeto;
+    }
+
+    public static function limpiarObjeto($objeto)
+    {
+        foreach ($objeto as $key => $value) {
+            if ($value === "" || $value === null) {
+                unset($objeto->$key);
             }
         }
         return $objeto;

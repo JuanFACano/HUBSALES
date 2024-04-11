@@ -34,7 +34,7 @@ class Usuario extends ActiveRecord
         $this->user_rol = $args['rol'] ?? null;
         $this->user_correo = $args['correo'] ?? '';
         $this->user_contrasenia = $args['contrasenia'] ?? '';
-        $this->confirmado = $args['confirmado'] ?? 0;
+        $this->confirmado = $args['confirmado'] ?? null;
         $this->token = $args['token'] ?? '';
     }
 

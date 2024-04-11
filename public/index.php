@@ -50,7 +50,7 @@ if ($_SESSION['user_login']) {
 
 
   // API Productos
-  $router->get('/api/usuarios', [APIController::class, 'index']);
+  $router->get('/api/usuarios', [APIController::class, 'usuarios']);
   $router->get('/api/roles', [APIController::class, 'roles']);
   $router->get('/api/productos', [APIController::class, 'productos']);
   $router->get('/api/categorias', [APIController::class, 'categorias']);

@@ -2,17 +2,21 @@
 
 namespace Controllers;
 
+use Model\ActiveRecord;
 use Model\Categoria;
 use Model\Producto;
 use Model\Rol;
 use Model\Usuario;
 
-class APIController
+class APIController extends ActiveRecord
 {
-  public static function index()
+  public static function usuarios()
   {
-    $usuarios = Usuario::all();
-    echo json_encode($usuarios);
+    $campos = ['user_id', 'user_nombre', 'rol_nombre', 'user_correo'];
+    $tablas_join = ['usuarios', 'roles'];
+    $columnas = ['user_rol', 'rol_id'];
+    $usuariosJoin = Usuario::queryBuilderAll($campos, $tablas_join, $columnas);
+    echo json_encode($usuariosJoin);
   }
 
   public static function roles()

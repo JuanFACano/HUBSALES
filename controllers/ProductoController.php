@@ -9,7 +9,7 @@ use MVC\Router;
 
 class ProductoController
 {
-  protected static $campos = ['prod_nombre', 'prod_precio_unitario', 'prod_existencias', 'cat_nombre', 'prod_descripcion'];
+  protected static $campos = ['prod_id', 'prod_nombre', 'prod_precio_unitario', 'prod_existencias', 'cat_nombre', 'prod_descripcion'];
   protected static $tablas_join = ['productos', 'categorias_productos'];
   protected static  $columnas = ['prod_cat_id', 'cat_id'];
 
