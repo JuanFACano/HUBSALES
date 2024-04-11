@@ -38,11 +38,6 @@
     }
   }
 
-  .contenedor_main {
-    overflow: auto;
-    margin: 0 2rem;
-  }
-
   // App Body
 
 
@@ -67,6 +62,11 @@
     .contenedor_main {
       width: 100%;
       padding: 0 2rem;
+      display: none;
+
+      &.mostrar {
+        display: block;
+      }
 
 
       .tabla_contenedor {

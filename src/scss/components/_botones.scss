@@ -19,6 +19,8 @@
   &.boton-bg {
     @include m.boton(v.$azul-700, v.$azul-100, 2rem, 2rem);
   }
+
+  
 }
 
 .contenedor_boton {

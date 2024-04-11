@@ -3,7 +3,7 @@
     <header class="contenedor_header">
       <div class="contenedor_header_head">
         <h1 class="app_title">Productos</h1>
-        <button class="boton pad1-4">Agregar Producto</button>
+        <button data-seccion="2" class="boton pad1-4">Agregar Producto</button>
       </div>
       <div class="contenedor_header_search campo campo_search">
         <input type="text" id="search" name="search" placeholder="Buscar Producto">

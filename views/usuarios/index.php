@@ -1,11 +1,14 @@
-<div class="contenedor_app">
+<?php
+include_once __DIR__ . '/../templates/alertas.php';
+?>
 
+<div class="contenedor_app">
   <!-- Seccion 1 -->
   <div id="seccion-1" class="contenedor_main">
     <header class="contenedor_header">
       <div class="contenedor_header_head">
         <h1 class="app_title">usuarios</h1>
-        <button class="boton pad1-4">Agregar Usuario</button>
+        <button data-seccion="2" class="boton pad1-4 boton-seccion">Agregar Usuario</button>
       </div>
       <div class="contenedor_header_search campo campo_search">
         <form action="">
@@ -30,12 +33,8 @@
     </div>
   </div>
   <!-- Seccion 2 -->
-  <div style="display: none;" id="seccion-2" class="contenedor_main">
-
-    <div class="form_contenedor">
-      <?php
-      include_once __DIR__ . '/../templates/alertas.php';
-      ?>
+  <div id="seccion-2" class="contenedor_main">
+    <div class=" form_contenedor">
       <form class="form" method="POST" action="/usuarios/crear">
         <div class="campo_doble">
           <div class="campo_simple">
@@ -63,7 +62,10 @@
           <label class="campo_label" for="contrasenia">Contraseña</label>
           <input type="password" name="contrasenia" id="contrasenia" placeholder="ingrese una contraseña">
         </div>
-        <input class="boton" type="submit" value="Crear Usuario">
+        <div class="boton_contenedor">
+          <input class="boton boton-100 pad1-4" type="submit" value="Crear Usuario">
+          <button data-seccion="1" class="boton pad1-4 boton-100 mt1 boton-seccion">Volver</button>
+        </div>
       </form>
     </div>
   </div>

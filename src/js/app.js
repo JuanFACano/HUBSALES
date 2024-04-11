@@ -1,18 +1,43 @@
-const body = document.querySelector("body");
+let paso = 1;
 
 document.addEventListener('DOMContentLoaded', function () {
   iniciarApp();
 });
 
 function iniciarApp() {
-
+  mostrarSeccion();
+  sections();
   tabs();
   goBack();
 }
 
+function mostrarSeccion() {
+  // ocultar seccion 'mostrar' actual
+  const seccionAnterior = document.querySelector('.mostrar')
+  if (seccionAnterior) {
+    seccionAnterior.classList.remove('mostrar')
+  }
+
+  // seleccionar la seccion
+  const pasoSelector = `#seccion-${paso}`;
+  const seccion = document.querySelector(pasoSelector)
+  seccion.classList.add('mostrar')
+}
+
+function sections() {
+  const botones = document.querySelectorAll('.boton-seccion');
+  botones.forEach(boton => {
+    console.log(boton);
+    boton.addEventListener('click', (event) => {
+      event.preventDefault();
+      paso = parseInt(event.target.dataset.seccion);
+      mostrarSeccion();
+    })
+  });
+}
 
 function tabs() {
-  const menuItems = body.querySelectorAll(".menu_item");
+  const menuItems = document.querySelectorAll(".menu_item");
   const windowsPathname = window.location.pathname;
 
   menuItems.forEach(menuItem => {
@@ -37,7 +62,7 @@ function tabs() {
 
 
 function goBack() {
-  const buttonGoBack = body.querySelector(".boton_back");
+  const buttonGoBack = document.querySelector(".boton_back");
   if (buttonGoBack) {
     buttonGoBack.addEventListener("click", (e) => {
       window.history.back();
@@ -106,7 +131,7 @@ async function consultarUsuarios() {
       });
 
 
-      body.querySelector('#usuarios').appendChild(tableRow)
+      document.querySelector('#usuarios').appendChild(tableRow)
     });
 
   } catch (error) {

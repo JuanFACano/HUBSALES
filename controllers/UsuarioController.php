@@ -11,11 +11,12 @@ class UsuarioController
     protected static $campos = ['user_nombre', 'rol_nombre', 'user_correo'];
     protected static $tablas_join = ['usuarios', 'roles'];
     protected static  $columnas = ['user_rol', 'rol_id'];
+
     public static function index(Router $router)
     {
         $usuariosJoin = Usuario::queryBuilderAll(self::$campos, self::$tablas_join, self::$columnas);
 
-        $router->render('usuarios/usuario', $usuariosJoin);
+        $router->render('usuarios/index', $usuariosJoin);
     }
 
     public static function crear(Router $router)

@@ -53,6 +53,10 @@
         padding: 1rem 4rem;
         color: v.$azul-100;
     }
+
+    &.boton-100 {
+        width: 100%;
+    }
 }
 
 @mixin grid($columnas, $espaciado ) {
